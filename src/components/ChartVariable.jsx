@@ -21,7 +21,12 @@ const ChartVariable = ({ scans }) => {
 							<div className="subtitle">Set Parameters</div>
 							<div className="indicator">
 								<div>Period</div>
-								<input type="text" defaultValue={values.default_value} />
+								<input
+									type="number"
+									min={values.min_value}
+									max={values.max_value}
+									defaultValue={values.default_value}
+								/>
 							</div>
 						</div>
 					)}

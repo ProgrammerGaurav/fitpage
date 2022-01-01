@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-const FormatCriteria = (criteria, index) => {
+const FormatCriteria = (id, criteria, index) => {
 	if (criteria.type === "plain_text") {
 		return criteria.text;
 	} else if (criteria.type === "variable") {
@@ -11,7 +11,7 @@ const FormatCriteria = (criteria, index) => {
 				criteriaText = criteriaText.replace(
 					key,
 					`<a
-						href="${index}/${key}"
+						href="/${id}/${index}/${key}"
 					>
 						(${criteria.variable[key].values[0]})
 					</a>`
@@ -20,7 +20,7 @@ const FormatCriteria = (criteria, index) => {
 				criteriaText = criteriaText.replace(
 					key,
 					`<a
-						href="${index}/${key}"
+						href="/${id}/${index}/${key}"
 					>
 						(${criteria.variable[key].default_value})
 					</a>`
@@ -54,7 +54,10 @@ const ChartDetail = ({ scans }) => {
 					</div>
 					{scan.criteria.map((cri, index) => (
 						<div className="criteria" key={index}>
-							<div className="title" dangerouslySetInnerHTML={{ __html: FormatCriteria(cri, index) }} />
+							<div
+								className="title"
+								dangerouslySetInnerHTML={{ __html: FormatCriteria(id, cri, index) }}
+							/>
 							{scan.criteria.length - 1 !== index && <div className="subtitle">and</div>}
 						</div>
 					))}
