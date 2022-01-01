@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	background-color: #f5f5f5;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+.chartslist {
+	width: 100%;
+	max-width: 420px;
+	min-height: 300px;
+	margin: 0 auto;
+	margin-top: 40px;
+	background-color: #00121c;
+	color: #fff;
+	padding: 15px;
+	display: block;
+}
+.chartslist .list {
+	padding: 10px;
+	border-bottom: 1px dotted #ececec;
+}
+.chartslist .list .title {
+	font-weight: normal;
+}
+.chartslist .list .subtitle {
+	font-size: 10px;
+}
+.chartslist .list .subtitle.green {
+	color: #34b71f;
+}
+.chartslist .list .subtitle.red {
+	color: #f3392f;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.chartdetail .list {
+	border: none;
+	background-color: #1686b0;
+	min-height: 60px;
+}
+.chartdetail .criteria {
+	padding: 0 10px;
+	margin-bottom: 10px;
+}
+.chartdetail .criteria .title {
+	margin: 10px 0;
+}
+.chartdetail .criteria .subtitle {
+	font-size: 10px;
+}
+.chartdetail .criteria a {
+	color: #337ab7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.chartvariable .title {
+	font-size: 14px;
+	font-weight: bolder;
+	text-transform: uppercase;
+	margin-bottom: 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.chartvariable .subtitle {
+	font-size: 14px;
+	margin-bottom: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+.chartvariable .indicator {
+	background-color: #fff;
+	min-height: 60px;
+	font-size: 14px;
+	padding: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chartvariable .indicator div {
+	float: left;
+	color: #333333;
+}
+.chartvariable .indicator input {
+	float: right;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
 }
